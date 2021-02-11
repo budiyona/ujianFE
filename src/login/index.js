@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { Button} from '../input';
 import Label from '../label';
 class Login extends Component {
@@ -20,6 +21,9 @@ class Login extends Component {
     doLogin = () => {
         console.log("Login");
         this.props.doLogin(this.state.username)
+        return(
+            <Redirect to="/form" />
+        )
     }
     render() { 
         return ( 
